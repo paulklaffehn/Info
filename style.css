@@ -104,7 +104,7 @@ p {
 
 .contactBtn {
     color: white;
-    background-color: #FEB62F;
+    background-color: #1793d1;
     padding: 8px 24px;
     display: inline-block;
     border-radius: 8px;
@@ -145,6 +145,13 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    background-color: #353a4d;
 }
 
 .service-card.is-empty {
@@ -181,7 +188,11 @@ p {
     margin-right: calc(50% - 50vw);
     background-color: #2c2f3d;
     min-height: 360px;
-    padding: 40px 24px 60px;
+    padding: 40px 8px 60px;
+}
+
+.desktop-left-right + .insights-area {
+    margin-top: 600px;
 }
 
 .insights-area + .insights-area {
@@ -189,15 +200,16 @@ p {
 }
 
 .insights-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     color: white;
 }
 
 .insights-inner h2 {
     margin: 0 0 12px;
-    font-size: 24px;
+    font-size: 42px;
     font-weight: 600;
+    text-align: center;
 }
 
 .insights-inner p {
@@ -290,4 +302,92 @@ body.about-page {
     .services {
         grid-template-columns: 1fr;
     }
+}
+
+.insight-cards {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 54px;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.insight-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.insight-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.insight-card {
+    width: 300px;
+    height: 600px;
+    padding: 18px;
+    background-color: #353a4d;
+    border-radius: 10px;
+    transition: box-shadow 0.25s ease;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.insight-card:hover {
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.45);
+}
+
+.insight-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--card-bg);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1);
+    transition: transform 0.25s ease;
+    z-index: 0;
+}
+
+.insight-card:hover::before {
+    transform: scale(1.08);
+}
+
+.insight-card h3,
+.insight-card p {
+    position: relative;
+    z-index: 1;
+}
+
+.insight-card h3 {
+    margin: 0 0 8px;
+    color: white;
+    font-size: 20px;
+}
+
+.insight-card p {
+    margin: 0;
+    color: #d7dced;
+    font-size: 16px;
+}
+
+
+.insight-card-frog {
+    --card-bg: url('img/frog1.jpg');
+}
+
+.insight-card-city {
+    --card-bg: url('img/stadtview.jpg');
+}
+
+.insight-card-forest {
+    --card-bg: url('img/wald1.jpg');
+}
+
+.insight-card-saltlake {
+    --card-bg: url('img/salzsee1.jpg');
 }
