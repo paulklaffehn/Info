@@ -184,6 +184,10 @@ p {
     padding: 40px 24px 60px;
 }
 
+.insights-area + .insights-area {
+    margin-top: 500px;
+}
+
 .insights-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -287,4 +291,3 @@ body.about-page {
         grid-template-columns: 1fr;
     }
 }
-
