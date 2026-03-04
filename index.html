@@ -2,13 +2,67 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Guten Tag</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="site-header">
+        <img class="logo" src="img/logo.png" alt="">
+        <nav class="header-nav">
+            <a class="header-link" href="index.html">Startseite</a>
+            <a class="header-link" href="Insights.html">Insights</a>
+            <a class="header-link" href="Dienstleistungen.html">Dienstleistungen</a>
+            <a class="header-link" href="ueber-uns.html">Uber uns</a>
+        </nav>
+        <a class="contactBtn header-contact-btn" href="mailto: junus@mailinator.com?subject=Kontaktanfrage&body=Hallo, Junus!">
+            <img class="button-icon" src="img/mail.svg" alt="">
+            Kontakt
+        </a>
+    </header>
+    <video class="wasser" autoplay muted loop>
+        <source src="img/wasser.mp4" type="video/mp4">
+    </video>
+    <div class="desktop-left-right">
+        <div>
+            <h1>Herzlich <br>willkommen</h1>
+            <p>
+                Hier entsteht eine Webseite
+            </p>
+        </div>
+    </div>
 
-    <h1>Guten Tag</h1>
-    <h1>Guten Tag2</h1>
+    <section class="services">
+        <article class="service-card is-empty" aria-hidden="true"></article>
+        <article class="service-card">
+            <span class="service-icon"></span>
+            <h2>IT-Sicherheit</h2>
+            <span class="service-arrow">&gt;&gt;</span>
+        </article>
+        <article class="service-card">
+            <span class="service-icon"></span>
+            <h2>Cloudlosungen</h2>
+            <span class="service-arrow">&gt;&gt;</span>
+        </article>
+        <article class="service-card">
+            <span class="service-icon"></span>
+            <h2>Hard &amp; Software</h2>
+            <span class="service-arrow">&gt;&gt;</span>
+        </article>
+        <article class="service-card is-empty" aria-hidden="true"></article>
+    </section>
 
+    <section class="insights-area">
+        <div class="insights-inner">
+            <h2>Insights</h2>
+            <p>Hier werden spaeter Insight-Artikel angezeigt.</p>
+        </div>
+    </section>
+
+    <footer class="footer"></footer>
 </body>
 </html>
