@@ -192,11 +192,11 @@ p {
 }
 
 .desktop-left-right + .insights-area {
-    margin-top: 600px;
+    margin-top: 500px;
 }
 
 .insights-area + .insights-area {
-    margin-top: 500px;
+    margin-top: 0;
 }
 
 .insights-inner {
@@ -391,3 +391,23 @@ body.about-page {
 .insight-card-saltlake {
     --card-bg: url('img/salzsee1.jpg');
 }
+
+
+
+
+
+
+.insight-card-container {
+    --card-bg: url('img/container.jpg');
+}
+
+.bg-video {
+    opacity: 0;
+    transition: none;
+    pointer-events: none;
+}
+
+.bg-video.is-active {
+    opacity: 1;
+}
+

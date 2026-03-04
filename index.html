@@ -24,8 +24,11 @@
             Kontakt
         </a>
     </header>
-    <video class="wasser" autoplay muted loop>
+    <video id="bg-video-a" class="wasser bg-video is-active" autoplay muted playsinline preload="auto">
         <source src="img/wasser.mp4" type="video/mp4">
+    </video>
+    <video id="bg-video-b" class="wasser bg-video" muted playsinline preload="auto">
+        <source src="img/windradsonnenuntergang.mp4" type="video/mp4">
     </video>
     <div class="desktop-left-right">
         <div>
@@ -64,20 +67,68 @@
                         <p>Kurzbeschreibung fuer einen Insight-Beitrag.</p>
                     </div>
                 </a>
+                <a class="insight-card-link" href="insight-card-5.html">
+                    <div class="insight-card insight-card-container">
+                        <h3>Test Artikel</h3>
+                        <p>Kurzbeschreibung fuer einen Insight-Beitrag.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
     <section class="insights-area">
         <div class="insights-inner">
-            <h2>Blog</h2>
-            <p>Hier ist eine weitere Sektion.</p>
+        
+            <p>Hier folgt der Blog-Inhalt.</p>
         </div>
     </section>
 
+    <script>
+        const bgVideos = [
+            document.getElementById('bg-video-a'),
+            document.getElementById('bg-video-b')
+        ];
+        const playlist = ['img/wasser.mp4', 'img/windradsonnenuntergang.mp4', 'img/grauewueste.mp4', 'img/stadtleben2.mp4'];
+        let activeVideoIndex = 0;
+        let activeSourceIndex = 0;
+
+        function activateVideo(nextVideoIndex) {
+            bgVideos[activeVideoIndex].classList.remove('is-active');
+            bgVideos[nextVideoIndex].classList.add('is-active');
+            activeVideoIndex = nextVideoIndex;
+        }
+
+        bgVideos.forEach((video) => {
+            video.addEventListener('ended', () => {
+                if (video !== bgVideos[activeVideoIndex]) {
+                    return;
+                }
+
+                const nextVideoIndex = (activeVideoIndex + 1) % bgVideos.length;
+                const nextVideo = bgVideos[nextVideoIndex];
+
+                nextVideo.currentTime = 0;
+                nextVideo.play();
+                activateVideo(nextVideoIndex);
+
+                activeSourceIndex = (activeSourceIndex + 1) % playlist.length;
+                const preloadSourceIndex = (activeSourceIndex + 1) % playlist.length;
+                video.src = playlist[preloadSourceIndex];
+                video.load();
+            });
+        });
+    </script>
     <footer class="footer"></footer>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
